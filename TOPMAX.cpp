@@ -74,7 +74,7 @@ bool TOPMAX::add(float value)
   int i = 1;
   while ((i < _size) && (value > _arr[i]))
   {
-    _arr[i-1] = _arr[i];
+    _arr[i - 1] = _arr[i];
     i++;
   }
   _arr[i-1] = value;

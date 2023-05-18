@@ -49,7 +49,7 @@ unittest_teardown()
 }
 
 
-unittest(constructor)
+unittest(test_constructor)
 {
   TOPMAX tm(5);
   assertEqual(5, tm.size());
@@ -57,7 +57,7 @@ unittest(constructor)
 }
 
 
-unittest(add)
+unittest(test_add)
 {
   TOPMAX tm(5);
   assertEqual(5, tm.size());
@@ -75,6 +75,18 @@ unittest(add)
 }
 
 
+unittest(test_get)
+{
+  TOPMAX tm(5);
+  assertEqual(5, tm.size());
+
+  for (int i = 0; i < 10; i++)
+  {
+    tm.add(i);
+    int idx = tm.count();
+    assertEqualFloat(i, tm.get(idx));
+  }
+}
 
 
 unittest_main()
