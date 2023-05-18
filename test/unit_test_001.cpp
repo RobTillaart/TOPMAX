@@ -84,7 +84,7 @@ unittest(test_get)
   {
     tm.add(i);
     int idx = tm.count();
-    assertEqualFloat(i, tm.get(idx));
+    assertEqualFloat(i, tm.get(idx), 0.001);
   }
 }
 
