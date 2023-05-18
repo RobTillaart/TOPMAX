@@ -86,6 +86,13 @@ unittest(test_get)
     int idx = tm.count();
     assertEqualFloat(i, tm.get(idx), 0.001);
   }
+
+  for (int i = 0; i < tm.count(); i++)
+  {
+    fprintf(stderr, "%f\t", tm.get(idx));
+  }
+
+  fprintf(stderr, "\n");
 }
 
 
