@@ -67,17 +67,17 @@ bool TOPMAX::add(float value)
     return true;
   }
 
-  //  too small
-  if (value < _arr[0]) return false;
+  //  too small (or equal)
+  if (value <= _arr[0]) return false;
 
   //  insert
-  int i = 0;
-  while ((i < _size -1) && (value > _arr[i]))
+  int i = 1;
+  while ((i < _size) && (value > _arr[i]))
   {
-    _arr[i] = _arr[i + 1];
+    _arr[i-1] = _arr[i];
     i++;
   }
-  _arr[i - 1] = value;
+  _arr[i-1] = value;
   return true;
 }
 
