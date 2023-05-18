@@ -89,10 +89,27 @@ unittest(test_get)
 
   for (int i = 0; i < tm.count(); i++)
   {
-    fprintf(stderr, "%f\t", tm.get(idx));
+    fprintf(stderr, "%f\t", tm.get(i));
   }
 
   fprintf(stderr, "\n");
+}
+
+
+unittest(test_reset)
+{
+  TOPMAX tm(5);
+  assertEqual(5, tm.size());
+  assertEqual(0, tm.count());
+
+  for (int i = 0; i < 5; i++)
+  {
+    tm.add(i);
+  }
+  assertEqual(5, tm.count());
+
+  tm.reset();
+  assertEqual(0, tm.count());
 }
 
 
