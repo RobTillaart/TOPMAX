@@ -49,7 +49,7 @@ unittest_teardown()
 }
 
 
-unittest_constructor()
+unittest(constructor)
 {
   TOPMAX tm(5);
   assertEqual(5, tm.size());
@@ -57,7 +57,7 @@ unittest_constructor()
 }
 
 
-unittest_add()
+unittest(add)
 {
   TOPMAX tm(5);
   assertEqual(5, tm.size());
