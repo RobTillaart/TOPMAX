@@ -42,8 +42,7 @@ void loop()
   }
   Serial.println();
 
-  // tme.add(x, cnt);  //  tag the maxima with the "sample counter".
-  tme.add(x);  //  tag the maxima with the "sample counter".
+  tme.add(x, cnt);  //  tag the maxima with the "sample counter".
 
   delay(random(200));
 }
