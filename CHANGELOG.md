@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - add **TOPMAXext**, holds a value + tag (e.g. timestamp or counter)
 - add examples.
 - changed **get()** into **getValue()**
+- update readme.md
 - minor edits.
 
 
