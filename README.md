@@ -71,12 +71,13 @@ The maximum size is currently 255, or less if there is not enough memory.
 - **uint8_t size()** returns the maximum number of elements in the internal array. 
 - **void reset()** reset the internal counter to 0, logical clearing of the system.
 - **bool add(float value)** add a value to the TOPMAX object if it is in the top N of maxima.
-If so smallest element is removed.
+If so the smallest element is removed.
+Returns false if not added or if there was an allocation error.
 - **float getValue(uint8_t index)** get an element of the internal array.
 The index must be <= **count()**, if not the function currently returns **NaN**.
 This may or may not be a valid value, so the user should guard the **index** parameter carefully.
 - **bool fill(float value)** convenience function to fill the internal array 
-with a single value e.g. 0.
+with a single value e.g. 0. Returns true on success.
 
 
 #### TOPMAXext
@@ -108,24 +109,27 @@ with a single value e.g. 0. (tag idem).
 
 - add unit tests.
   - for extended version if possible.
-- add more examples.
-  - example creative use of tag field.
-  - example performance measurements (depends on size + inserted values).
-    (Marsaglia PRNG, to be repeatable over platforms).
 
 
 #### Could
 
+- add more examples.
+  - example creative use of tag field.
+- add error handling
+  - TOP_ERR_ALLOCATION
+  - TOP_ERR_INDEX
+  - TOP_NOT_ADDED
+  - TOP_OK
+  - int error; **int lastError()**
 - create template class.
 - **bool check(float value)** and **bool check(float value, uint32_t tag)**
-  - if (value < getValue(0)) or so.  
+  - if (value < getValue(0)) or so.
   - **inRange(value)**
   - checks if this value would be added to the TOP-N
 - **TOP** class, in which the condition can be set as parameter.
-  - a function() returning true or false when comparing 2 values. 
+  - a function() returning true or false when comparing 2 values.
 - **bool hasValue(float value)** and **bool hasTag(uint32_t tag)**
   - or **int getIndex(...)** duplicates?
-  
 
 
 #### Wont

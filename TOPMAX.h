@@ -8,10 +8,10 @@
 //     URL: https://github.com/RobTillaart/TOPMAX
 
 
-#define TOPMAX_LIB_VERSION             (F("0.2.0"))
-
-
 #include "Arduino.h"
+
+
+#define TOPMAX_LIB_VERSION             (F("0.2.0"))
 
 
 class TOPMAX
@@ -24,7 +24,7 @@ public:
   uint8_t size();
   void    reset();
   virtual bool add(float value);
-  virtual void fill(float value);
+  virtual bool fill(float value);
   float   getValue(uint8_t index);
 
 
@@ -46,8 +46,8 @@ public:
   ~TOPMAXext();
 
   bool     add(float value, uint32_t tag);
+  bool     fill(float value, uint32_t tag);
   uint32_t getTag(uint8_t index);
-  void     fill(float value, uint32_t tag);
 
 private:
   uint32_t * _tag;

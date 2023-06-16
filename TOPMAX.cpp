@@ -83,13 +83,6 @@ bool TOPMAX::add(float value)
 }
 
 
-float TOPMAX::getValue(uint8_t index)
-{
-  if (index >= _count) return NAN;
-  return _arr[_count - 1 - index];
-}
-
-
 void TOPMAX::fill(float value)
 {
   for (int i = 0; i < _size; i++)
@@ -97,6 +90,13 @@ void TOPMAX::fill(float value)
     _arr[i] = value;
   }
   _count = _size;
+}
+
+
+float TOPMAX::getValue(uint8_t index)
+{
+  if ((_arr == NULL) || (index >= _count)) return NAN;
+  return _arr[_count - 1 - index];
 }
 
 
@@ -159,25 +159,26 @@ bool TOPMAXext::add(float value, uint32_t tag)
   _arr[i - 1] = value;
   _tag[i - 1] = tag;
   return true;
-
 }
 
 
-uint32_t TOPMAXext::getTag(uint8_t index)
+bool TOPMAXext::fill(float value, uint32_t tag)
 {
-  if (index >= _count) return 0xFFFFFFFF;
-  return _tag[_count - 1 - index];
-}
-
-
-void TOPMAXext::fill(float value, uint32_t tag)
-{
+  if ((_tag == NULL) return false;
   for (int i = 0; i < _size; i++)
   {
     _arr[i] = value;
     _tag[i] = tag;
   }
   _count = _size;
+  return true;
+}
+
+
+uint32_t TOPMAXext::getTag(uint8_t index)
+{
+  if ((_tag == NULL) || (index >= _count)) return 0xFFFFFFFF;
+  return _tag[_count - 1 - index];
 }
 
 
