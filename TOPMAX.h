@@ -2,13 +2,13 @@
 //
 //    FILE: TOPMAX.h
 //  AUTHOR: Rob Tillaart
-// VERSION: 0.1.1
+// VERSION: 0.2.0
 //    DATE: 2023-05-18
 // PURPOSE: Arduino library to track top n maxima.
 //     URL: https://github.com/RobTillaart/TOPMAX
 
 
-#define TOPMAX_LIB_VERSION             (F("0.1.1"))
+#define TOPMAX_LIB_VERSION             (F("0.2.0"))
 
 
 #include "Arduino.h"
@@ -44,7 +44,7 @@ class TOPMAXext : public TOPMAX
 public:
   TOPMAXext(uint8_t size = 5);
   ~TOPMAXext();
-  
+
   bool     add(float value, uint32_t tag);
   uint32_t getTag(uint8_t index);
   void     fill(float value, uint32_t tag);
