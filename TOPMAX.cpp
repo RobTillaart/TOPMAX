@@ -83,13 +83,15 @@ bool TOPMAX::add(float value)
 }
 
 
-void TOPMAX::fill(float value)
+bool TOPMAX::fill(float value)
 {
+  if (_arr == NULL) return false;
   for (int i = 0; i < _size; i++)
   {
     _arr[i] = value;
   }
   _count = _size;
+  return true;
 }
 
 
@@ -164,7 +166,8 @@ bool TOPMAXext::add(float value, uint32_t tag)
 
 bool TOPMAXext::fill(float value, uint32_t tag)
 {
-  if ((_tag == NULL) return false;
+  if (_arr == NULL) return false;
+  if (_tag == NULL) return false;
   for (int i = 0; i < _size; i++)
   {
     _arr[i] = value;

@@ -19,25 +19,25 @@ void setup()
   Serial.println(TOPMAX_LIB_VERSION);
   Serial.println();
 
-  for (int sz = 0; sz <= 200; sz += 50)
+  for (int sz = 1; sz <= 128; sz *= 2)
   {
     test_fill(sz);
   }
   Serial.println();
 
-  for (int sz = 0; sz <= 200; sz += 50)
+  for (int sz = 1; sz <= 128; sz *= 2)
   {
     test_add(sz);
   }
   Serial.println();
 
-  for (int sz = 0; sz <= 200; sz += 50)
+  for (int sz = 1; sz <= 128; sz *= 2)
   {
     test_fill_ext(sz);
   }
   Serial.println();
 
-  for (int sz = 0; sz <= 200; sz += 50)
+  for (int sz = 1; sz <= 128; sz *= 2)
   {
     test_add_ext(sz);
   }
@@ -65,7 +65,7 @@ void test_fill(uint8_t sz)
   Serial.print("\t");
   Serial.print(stop - start);
   Serial.print("\t");
-  Serial.print((1000.0 * sz) / (stop - start), 4);
+  Serial.print((stop - start) * 0.001, 4);
   Serial.println();
 }
 
@@ -84,7 +84,7 @@ void test_add(uint8_t sz)
   Serial.print("\t");
   Serial.print(stop - start);
   Serial.print("\t");
-  Serial.print((1000.0 * sz) / (stop - start), 4);
+  Serial.print((stop - start) * 0.001, 4);
   Serial.println();
 }
 
@@ -102,7 +102,7 @@ void test_fill_ext(uint8_t sz)
   Serial.print("\t");
   Serial.print(stop - start);
   Serial.print("\t");
-  Serial.print((1000.0 * sz) / (stop - start), 4);
+  Serial.print((stop - start) * 0.001, 4);
   Serial.println();
 }
 
@@ -122,7 +122,7 @@ void test_add_ext(uint8_t sz)
   Serial.print("\t");
   Serial.print(stop - start);
   Serial.print("\t");
-  Serial.print((1000.0 * sz) / (stop - start), 4);
+  Serial.print((stop - start) * 0.001, 4);
   Serial.println();
 }
 

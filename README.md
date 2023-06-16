@@ -136,5 +136,6 @@ with a single value e.g. 0. (tag idem).
 
 - how to handle double/triple etc. entries with same value
   - they are handled as unique elements, that is what I had in mind.
-
+- optimize loops in **fill()** (maybe upon request)
+  - pointer math
 

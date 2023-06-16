@@ -11,7 +11,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
   - reverses the order of the maxima when requested.
   - results in the top one always have index 0
   - top position is independent of the size of the TOPMAX object.
-- fix boundary bug  **getValue() / getTag()** (index >= count)
+- fix boundary bug  **getValue() / getTag()** (index >= count).
+- add allocation checks.
+- **fill()** returns bool (true upon success)
 - update unit tests
 - update readme.md
 - minor edits.
